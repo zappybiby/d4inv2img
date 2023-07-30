@@ -1,6 +1,7 @@
 # d4inv2img
 
 This is a utility for Diablo 4 that saves all items in your stash as images.
+![gif](https://s11.gifyu.com/images/Scvs5.gif)
 
 It uses mss for screen capture, OpenCV for detecting the item, and pyautogui for mouse movement.
 
