@@ -5,10 +5,9 @@ This is a utility for Diablo 4 that saves all items in your stash as images.
 It uses mss for screen capture, OpenCV for detecting the item, and pyautogui for mouse movement.
 
 # How to use
-1. Install requirements.txt
-2. Run main.py
-3. Hover over the first item in your stash and press 'F2' (default)
-4. The script will go through each item and save the images to the "Inventory" subdirectory.
+1. Source: Install requirements.txt & run main.py. Precompiled Binary: Unzip main.7z, run main.exe.
+2. Hover over the first item in your stash and press 'F2' (default)
+3. The script will go through each item and save the images to the "Inventory" subdirectory.
 
 ## Diablo 4 Settings
 1. Font scale medium
