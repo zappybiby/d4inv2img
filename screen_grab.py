@@ -30,7 +30,7 @@ def crop_screen():
 
 def crop_item(min_width, max_width, min_height, max_height, item_number):
     img = crop_screen()
-
+    rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     blur = cv2.bilateralFilter(gray, 5, 75, 75)
 
@@ -51,7 +51,7 @@ def crop_item(min_width, max_width, min_height, max_height, item_number):
 
         # If the rectangle meets the size criteria, save the cropped image
         if min_width <= w <= max_width and min_height <= h <= max_height:
-            roi = img[y:y + h, x:x + w]
+            roi = rgb[y:y + h, x:x + w]
             cv2.imwrite(f'Inventory/Item_{item_number}.png', roi)
             print(f'Successfully Saved Item {item_number}')
 
