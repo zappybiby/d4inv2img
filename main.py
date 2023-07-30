@@ -12,7 +12,9 @@ def main():
     keyboard.wait('F2')
     # Press 'F3' to stop the script
     keyboard.on_press(callback=on_press('f3'))
+
     delete_existing_pngs()
+
     init_coords = starting_coords()
     item_number = 1
     right_px, down_px = calculate_movement_auto()
@@ -22,9 +24,12 @@ def main():
 
             # Step 2: Check if the grid cell has an item
             if is_cell_empty() == 0:
-                # If it's not empty, run test_function() and increment item_number
-                crop_item(280, 450, 300, 900, item_number)
-                item_number += 1
+                try:
+                    crop_item(280, 450, 300, 900, item_number)
+                    item_number += 1
+                except TypeError:
+                    print(f"Failed to find item, row {row}, col {col}")
+                    continue
 
             # If this is not the last column in the row, move right
             if col != 10:
